@@ -14,6 +14,7 @@
   </head>
   <body>
     <form action="write_process.php" method="post">
+      ??
         <table align="center">
           <tr>
             <td><h3>제목</h3></td><td><input id="txt" type="text" name="title" size="60" placeholder="제목을 입력하세요."></td>
