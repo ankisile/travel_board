@@ -13,16 +13,23 @@
     </style>
   </head>
   <body>
+    <!--login안하면 접근 못하게 필요-->
+
     <form action="write_process.php" method="post">
         <table align="center">
           <tr>
-            <td><h3>제목</h3></td><td><input id="txt" type="text" name="title" size="60" placeholder="제목을 입력하세요."></td>
+            <td colspan="2"><h1>글쓰기</h1></td>
+          </tr>
+          <tr>
+            <td><h3>제목</h3></td><td><input id="txt" type="text" name="title" size="60"></td>
           </tr>
           <tr>
             <td><h3>내용</h3></td><td><textarea id="desc" name="description" rows="20" cols="100"></textarea></td>
           </tr>
           <tr>
-            <td colspan="2" align="center"><button type="submit">등록</button></td>
+            <td colspan="2" align="center">
+              <small>※음란물, 차별, 비하, 혐오 및 초상권, 저작권 침해 게시물은 민, 형사상의 책임을 질 수 있습니다.※</small><br><br>
+              <button type="submit">등록</button></td>
           </tr>
       </table>
     </form>
