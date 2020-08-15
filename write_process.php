@@ -9,11 +9,12 @@
   INSERT INTO board
   (title, description, created, writer)
   VALUES(
-    '{$title}','{$description}',NOW(),'{$writer}'
+    '{$title}','{$description}',NOW(),'{$writer}',0
     )";
 
   $result = mysqli_query($conn,$sql);
-  if($result===false || !$title){
+
+  if($result===false){
     echo '<script>alert("저장하는 과정에서 문제가 생겼습니다. 이전 페이지로 돌아갑니다.");
     history.back();</script>';
   }
