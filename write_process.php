@@ -8,7 +8,7 @@
 
   $sql = "
   INSERT INTO board
-  (title, description, created, writer)
+  (title, description, created, writer, hit)
   VALUES(
     '{$title}','{$description}',NOW(),'{$writer}',0
     )";
