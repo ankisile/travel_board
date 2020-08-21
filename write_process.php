@@ -1,10 +1,11 @@
 <?php
   //보안 필요!
+  session_start();
   $conn=mysqli_connect("localhost", "root", "111111", "board");
 
   $title=$_POST['title'];
   $description = $_POST['description'];
-  $writer = 'user'; //user의 id를 어떻게 연관시켜야 될지 감이 안와서 일단 이렇게 함
+  $writer = $_SESSION['user_id']; //user의 id를 어떻게 연관시켜야 될지 감이 안와서 일단 이렇게 함
 
   $sql = "
   INSERT INTO board
