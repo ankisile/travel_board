@@ -2,9 +2,14 @@
   //보안 필요!!
   $conn=mysqli_connect("localhost", "root", "111111", "board");
 
-  //폼의 name이 어떻게 되는지에 따라 바뀌어야 됨. 수정 필요!!
   $user_id=$_POST['user_id'];
-  $user_pw = password_hash($_POST['user_pw'], PASSWORD_DEFAULT);
+  if($_POST['user_pw']!=$_POST['user_pw2']){
+    echo "<script>alert('비밀번호가 다릅니다. 다시 입력해주세요');
+    history.back();</script>"
+  }
+  else{
+    $user_pw = password_hash($_POST['user_pw'], PASSWORD_DEFAULT);
+  }
   $email = $_POST['email'];
 
   $id_check = "select * from member where id='$user_id'";
@@ -25,9 +30,7 @@
 
     if($result === TRUE){
       echo "<script>alert('회원가입 되었습니다.');
-      location.replace('./index.php');</script>"
-      //login페이지로 이동하도록 만들자
-      //<meta http-equiv="refresh" content="20 ; http://tistory.com"> 이걸 사용해볼지 고민
+      location.replace('./login.php');</script>" //login페이지로 이동
     }
     else{
       echo "<script>alert('오류발생');</script>"

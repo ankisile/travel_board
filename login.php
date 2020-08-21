@@ -7,7 +7,7 @@
  <body>
     <fieldset style="width:250px;">
             <legend>LOGIN</legend>
-                <form method='post' action='login_ok.php'>
+                <form method='post' action='login_process.php'>
                     <p>id : <input name='id' type='text' placeholder="Enter Your Email"></p>
                     <p>pw : <input name='pw' type='password' placeholder="Enter Your Password"> </p>
        <tr>

@@ -12,19 +12,19 @@
  </tr>
  <tr>
   <td align=center>ID</td>
-  <td><input type=text name=userid maxlength=15></td>
+  <td><input type=text name=user_id maxlength=15></td>
  </tr>
- <tr> 
+ <tr>
   <td align=center>비밀번호</td>
-  <td><input type=password name=userpw maxlength=20></td>
+  <td><input type=password name=user_pw maxlength=20></td>
  </tr>
  <tr>
   <td align=center>비밀번호 확인</td>
-  <td><input type=password name=userpw2 maxlength=20></td>
+  <td><input type=password name=user_pw2 maxlength=20></td>
  </tr>
  <tr>
   <td align=center> E-Mail</td>
-  <td><input type=text name=usermail maxlength=30></td>
+  <td><input type=text name=email maxlength=30></td>
  </tr>
  <tr> <td colspan=2 align=center><input type=submit value="JOIN">&nbsp;&nbsp;
   <input type=reset value="RESET">&nbsp;&nbsp;
