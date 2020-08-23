@@ -7,9 +7,7 @@
  <center>
  <form action=join_process.php method=post name=frmjoin>
  <table cellpadding=2 cellspacing=2>
- <tr>
-  <td colspan=2 align=center><b> 회 &nbsp;원&nbsp; 가 &nbsp;입</td></b>
- </tr>
+   <caption><b> 회 &nbsp;원&nbsp; 가 &nbsp;입</b></caption>
  <tr>
   <td align=center>ID</td>
   <td><input type=text name=user_id maxlength=15></td>
@@ -28,7 +26,7 @@
  </tr>
  <tr> <td colspan=2 align=center><input type=submit value="JOIN">&nbsp;&nbsp;
   <input type=reset value="RESET">&nbsp;&nbsp;
-  <input type=button value="BACK" onclick="history.back();">/////////
+  <input type=button value="BACK" onclick="history.back();">
  </td>
  </tr>
  </table>

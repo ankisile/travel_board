@@ -1,11 +1,15 @@
 <html>
  <head>
-  <title>
-   LOGIN
-  </title>
+  <title>LOGIN</title>
+  <style>
+  fieldset{
+    text-align: center;
+  }
+  </style>
  </head>
- <body>
-    <fieldset style="width:250px;">
+ <body align="center">
+   <center>
+    <fieldset id="login_box" style="width:250px;">
             <legend>LOGIN</legend>
                 <form method='post' action='login_process.php'>
                     <p>id : <input name='id' type='text' placeholder="Enter Your Email"></p>
@@ -18,6 +22,7 @@
                        </td>
                     </tr>
                 </form>
-    </fieldset>
+    </center>
+  </div>
  </body>
 </html>
