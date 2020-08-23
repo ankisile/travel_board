@@ -1,3 +1,7 @@
+<?php
+  session_start();
+
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +24,16 @@
 
     <body>
         <h1>웹페이지이름</h1>
+        <?php if(isset($_SESSION['user_id'])){ ?>
+        <form action="logout_process.php" method="post">
+          <input type="submit" value="logout">
+        </form>
+
+        <?php }
+        else{?>
+          룰루
+        <?php } ?>
+
         <div>
             <ol>
                 <li><a href="menu1.html" class="menus">1. MENU1</a></li>
