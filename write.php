@@ -3,10 +3,10 @@
   session_start();
   $conn=mysqli_connect("localhost", "root", "111111", "board");
 
-  if(!isset($_SESSION['user_id']){
-    echo "<script>alert('로그인이 필요합니다');location.href('./login.php');</script>"
+  if(isset($_SESSION['user_id'])===false){
+    echo "<script>alert('로그인이 필요합니다');location.href='./login.php';</script>";
   }
-
+  else{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,3 +44,4 @@
     </form>
   </body>
 </html>
+<?php } ?>
