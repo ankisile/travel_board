@@ -1,6 +1,13 @@
 <?php
 //로그인 했을때만 작성하도록 코드작성
- ?>
+  session_start();
+  $conn=mysqli_connect("localhost", "root", "111111", "board");
+
+  if(!isset($_SESSION['user_id']){
+    echo "<script>alert('로그인이 필요합니다');location.href('./login.php');</script>"
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +22,7 @@
       }
     </style>
   </head>
+
   <body>
     <form action="write_process.php" method="post">
         <table align="center">
