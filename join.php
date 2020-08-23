@@ -22,7 +22,7 @@
  </tr>
  <tr>
   <td align=center> E-Mail</td>
-  <td><input type=text name=email maxlength=30></td>
+  <td><input type="email" name=email maxlength=30></td>
  </tr>
  <tr> <td colspan=2 align=center><input type=submit value="JOIN">&nbsp;&nbsp;
   <input type=reset value="RESET">&nbsp;&nbsp;
