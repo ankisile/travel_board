@@ -5,7 +5,7 @@
 
   $title=$_POST['title'];
   $description = $_POST['description'];
-  $writer = $_SESSION['user_id']; //user의 id를 어떻게 연관시켜야 될지 감이 안와서 일단 이렇게 함
+  $writer = $_SESSION['user_id'];
 
   $sql = "
   INSERT INTO board
@@ -16,7 +16,7 @@
 
   $result = mysqli_query($conn,$sql);
 
-  if($result===false){ //titld이 없을 경우 저장하는 과정에서 문제 생김 나오게 만들기
+  if($result===false){ //title이 없을 경우 저장하는 과정에서 문제 생김 나오게 만들기
     echo '<script>alert("저장하는 과정에서 문제가 생겼습니다. 이전 페이지로 돌아갑니다.");
     history.back();</script>';
   }

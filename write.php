@@ -1,3 +1,6 @@
+<?php
+//로그인 했을때만 작성하도록 코드작성
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +16,6 @@
     </style>
   </head>
   <body>
-    <!--login안하면 접근 못하게 필요-->
-
     <form action="write_process.php" method="post">
         <table align="center">
           <tr>
