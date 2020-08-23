@@ -6,11 +6,11 @@
   $id=$_POST['id'];
   $pw=$_POST['pw'];
 
-  $sql = "select * from member where id='$id'";
-  $result = mysqli_query($conn,$id);
+  $sql = "select * from member where user_id='$id'";
+  $result = mysqli_query($conn,$sql)  or die(mysqli_error($conn));
   $member = mysqli_fetch_array($result);
   if($member>0){//중복되는 것이 있으면 이것은 id가 있다는 것
-    $hash_pw=$member['pw'];
+    $hash_pw=$member['user_pw'];
     if(password_verify($pw,$hash_pw)){
       $_SESSION['user_id']=$id;
       $_SESSION['user_pw']=$pw;
