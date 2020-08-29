@@ -5,6 +5,7 @@
 
  <body>
  <center>
+   <p><a href="index.php">HOME</a></p>
  <form action=join_process.php method=post name=frmjoin>
  <table cellpadding=2 cellspacing=2>
    <caption><b> 회 &nbsp;원&nbsp; 가 &nbsp;입</b></caption>
