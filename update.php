@@ -19,7 +19,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>후기게시판 글쓰기</title>
+    <title>후기게시판 글수정</title>
     <style>
       table{
         border-spacing: 10px;
@@ -34,7 +34,7 @@
     <form action="update_process.php" method="post">
         <table align="center">
           <tr>
-            <td colspan="2"><h1>글쓰기</h1></td>
+            <td colspan="2"><h1>글수정</h1></td>
           </tr>
           <tr>
             <td><h3>제목</h3></td><td><input id="txt" type="text" name="title" value="<?=$row['title']?>" size="60"></td>
