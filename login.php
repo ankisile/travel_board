@@ -8,6 +8,7 @@
   </style>
  </head>
  <body align="center">
+   <a href="index.php">HOME</a>&nbsp;&nbsp;
    <center>
     <fieldset id="login_box" style="width:250px;">
             <legend>LOGIN</legend>

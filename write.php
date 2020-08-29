@@ -38,6 +38,7 @@
           <tr>
             <td colspan="2" align="center">
               <small>※음란물, 차별, 비하, 혐오 및 초상권, 저작권 침해 게시물은 민, 형사상의 책임을 질 수 있습니다.※</small><br><br>
+              <input type=button value="취소" onclick="location.href='index.php'">
               <button type="submit">등록</button></td>
           </tr>
       </table>
