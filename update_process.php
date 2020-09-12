@@ -14,6 +14,6 @@
   if($result) {
     ?>
     <script>alert("수정되었습니다.");
-    location.replace("./view?id=<?=$id?>");</script>
+    location.replace("./view.php?id=<?=$id?>");</script>
 
 <?php } ?>
