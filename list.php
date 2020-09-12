@@ -1,5 +1,4 @@
 <?php
-
    require_once("list_process.php");
    /* 페이징 시작 */
    if(isset($_GET['page'])) {
@@ -106,8 +105,8 @@
 <head>
    <meta charset="utf-8" />
    <title>후기게시판</title>
-   <link rel="stylesheet" href="normalize.css" />
-   <link rel="stylesheet" href="board.css" />
+   <link rel="stylesheet" href="./css/normalize.css" />
+   <link rel="stylesheet" href="./css/boardcss.css" />
 </head>
 
 <body>
@@ -160,10 +159,10 @@
             <a href="write.php" class="btnWrite btn">글쓰기</a>
          </div>
          <div class="paging">
-            <?php echo $paging ?>
+          <!--  <?php echo $paging ?>-->
          </div>
          <div class="searchBox">
-            <form action="./index.php" method="get">
+            <form action="list.php" method="get">
                <select name="searchColumn">
                   <option <?php echo $searchColumn=='title'?'selected="selected"':null?> value="title">제목</option>
                   <option <?php echo $searchColumn=='description'?'selected="selected"':null?> value="description">내용</option>
