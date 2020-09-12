@@ -3,7 +3,7 @@
   session_start();
   $conn=mysqli_connect("localhost", "root", "111111", "board");
 
-  $id=$_POST['id'];
+  $id=$_GET['id'];
 
   $sql = "delete from board where id='$id'";
 
