@@ -1,6 +1,6 @@
 <?php
 
-   require_once("../dbconfig.php");
+   require_once("list_process.php");
    /* 페이징 시작 */
    if(isset($_GET['page'])) {
       $page = $_GET['page'];
@@ -23,7 +23,7 @@
     else {
       $searchSql = '';
    }
-   $sql = 'select count(*) as cnt from board_free' . $searchSql;
+   $sql = 'select count(*) as cnt from board' . $searchSql;
    $result = $db->query($sql);
    $row = $result->fetch_assoc();
 
@@ -96,7 +96,7 @@
 
       $currentLimit = ($onePage * $page) - $onePage; //몇 번째의 글부터 가져오는지
       $sqlLimit = ' limit ' . $currentLimit . ', ' . $onePage; //limit sql 구문
-      $sql = 'select * from board_free' . $searchSql . ' order by b_no desc' . $sqlLimit;//원하는 개수만큼
+      $sql = 'select * from board' . $searchSql . ' order by b_no desc' . $sqlLimit;//원하는 개수만큼
       $result = $db->query($sql);
    }
 ?>
@@ -105,17 +105,17 @@
 <html>
 <head>
    <meta charset="utf-8" />
-   <title>자유게시판</title>
-   <link rel="stylesheet" href="./css/normalize.css" />
-   <link rel="stylesheet" href="./css/board.css" />
+   <title>후기게시판</title>
+   <link rel="stylesheet" href="normalize.css" />
+   <link rel="stylesheet" href="board.css" />
 </head>
 
 <body>
    <article class="Articleboard">
-      <h3>자유게시판</h3>
+      <h3>후기게시판</h3>
       <div id="boardList">
          <table>
-            <caption class="readHide">자유게시판</caption>
+            <caption class="readHide">후기게시판</caption>
             <thead>
                <tr>
                   <th scope="col" class="no">번호</th>
@@ -133,22 +133,22 @@
                   else {
                      while($row = $result->fetch_assoc())
                      {
-                        $datetime = explode(' ', $row['b_date']);
+                        $datetime = explode(' ', $row['date']);
                         $date = $datetime[0];
                         $time = $datetime[1];
                         if($date == Date('Y-m-d'))
-                           $row['b_date'] = $time;
+                           $row['date'] = $time;
                         else
-                           $row['b_date'] = $date;
+                           $row['date'] = $date;
                   ?>
                   <tr>
-                     <td class="no"><?php echo $row['b_no']?></td>
+                     <td class="no"><?php echo $row['id']?></td>
                      <td class="title">
-                        <a href="./view.php?bno=<?php echo $row['b_no']?>"><?php echo $row['b_title']?></a>
+                        <a href="./view.php?bno=<?php echo $row['id']?>"><?php echo $row['title']?></a>
                      </td>
-                     <td class="author"><?php echo $row['b_id']?></td>
-                     <td class="date"><?php echo $row['b_date']?></td>
-                     <td class="hit"><?php echo $row['b_hit']?></td>
+                     <td class="author"><?php echo $row['writer']?></td>
+                     <td class="date"><?php echo $row['date']?></td>
+                     <td class="hit"><?php echo $row['hit']?></td>
                   </tr>
                   <?php
                      }
@@ -157,7 +157,7 @@
             </tbody>
          </table>
          <div class="btnSet">
-            <a href="./write.php" class="btnWrite btn">글쓰기</a>
+            <a href="write.php" class="btnWrite btn">글쓰기</a>
          </div>
          <div class="paging">
             <?php echo $paging ?>
@@ -165,9 +165,9 @@
          <div class="searchBox">
             <form action="./index.php" method="get">
                <select name="searchColumn">
-                  <option <?php echo $searchColumn=='b_title'?'selected="selected"':null?> value="b_title">제목</option>
-                  <option <?php echo $searchColumn=='b_content'?'selected="selected"':null?> value="b_content">내용</option>
-                  <option <?php echo $searchColumn=='b_id'?'selected="selected"':null?> value="b_id">작성자</option>
+                  <option <?php echo $searchColumn=='title'?'selected="selected"':null?> value="title">제목</option>
+                  <option <?php echo $searchColumn=='description'?'selected="selected"':null?> value="description">내용</option>
+                  <option <?php echo $searchColumn=='writer'?'selected="selected"':null?> value="writer">작성자</option>
                </select>
                <input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
                <button type="submit">검색</button>
