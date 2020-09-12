@@ -14,8 +14,7 @@
   }
   $id = $_GET['id'];
   if(!empty($id) && empty($_COOKIE['board_' . $id])) {
-      $sql = 'update board_free set hit = hit + 1 where id = ' . $id;
-      $result = $db->query($sql);
+      $result = mq("update board set hit = hit + 1 where id = '$id'");
       if(empty($result)) {
          ?>
          <script>
@@ -28,7 +27,7 @@
       }
    }
 
-  $sql = "select title, description, created, writer,hit from board where id = '$id'";
+  $sql = "select title, description, created, writer, hit from board where id = '$id'";
   $result = $db->query($sql);
   $row = $result->fetch_assoc();
 ?>
@@ -54,7 +53,7 @@
       <div class="btnSet">
             <a href="./update.php?id=<?php echo $id?>">수정</a>
             <a href="./delete.php?id=<?php echo $id?>">삭제</a>
-            <a href="./list.php">목록</a>
+            <a href="index.php">목록</a>
     </div>
   </article>
 </body>
