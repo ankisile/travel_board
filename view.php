@@ -35,14 +35,14 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>자유게시판</title>
+  <title>후기게시판</title>
   <link rel="stylesheet" href="./css/normalize.css" />
-  <link rel="stylesheet" href="./css/board.css" />
+  <link rel="stylesheet" href="./css/boardcss.css" />
 </head>
 <body>
   <article class="Articleboard">
-    <h3>자유게시판 읽기</h3>
-    <div id="boardView">
+    <h3>후기게시판 읽기</h3>
+    <div id="boardView" align="center">
       <h3 id="boardTitle"><?php echo $row['title']?></h3>
       <div id="boardInfo">
         <span id="boardID">작성자: <?php echo $row['writer']?></span>
@@ -54,6 +54,7 @@
             <a href="./update.php?id=<?php echo $id?>">수정</a>
             <a href="./delete.php?id=<?php echo $id?>">삭제</a>
             <a href="index.php">목록</a>
+      </div>
     </div>
   </article>
 </body>
