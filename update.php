@@ -12,7 +12,7 @@
     echo "<script>alert('로그인이 필요합니다');location.href='./login.php';</script>";
   }
   else if($_SESSION['user_id']!=$writer){
-    //echo "<script>alert('작성자가 다르므로 접근할수 없습니다.');history.back();</script>";
+    echo "<script>alert('작성자가 다르므로 접근할수 없습니다.');history.back();</script>";
   }
   else{
 ?>
