@@ -10,11 +10,11 @@
    /* 검색 시작 */
    if(isset($_GET['searchColumn'])) {
       $searchColumn = $_GET['searchColumn'];
-      $subString .= '&amp;searchColumn=' . $searchColumn;
+      $subString = '&amp;searchColumn=' . $searchColumn;
    }
    if(isset($_GET['searchText'])) {
       $searchText = $_GET['searchText'];
-      $subString .= '&amp;searchText=' . $searchText;
+      $subString = '&amp;searchText=' . $searchText;
    }
    if(isset($searchColumn) && isset($searchText)) {
       $searchSql = ' where ' . $searchColumn . ' like "%' . $searchText . '%"';
